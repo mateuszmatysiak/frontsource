@@ -1,6 +1,3 @@
-import { createGlobalStyles } from 'styled-components';
-
-
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -13,8 +10,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    margin: 0;
-    padding: 80px 65px 0;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 60px 65px 0;
     font-family: 'Montserrat';
   }
   button {
