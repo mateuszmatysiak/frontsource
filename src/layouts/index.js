@@ -1,13 +1,15 @@
 import React from "react"
-import Navigation from "../components/Navigation/Navigation"
+import Header from "../components/Header/Header"
+import Container from '../components/Container/Containter';
 import GlobalStyle from "../assets/styles/globalStyles"
-
 
 const Layout = ({ children }) => (
     <>
         <GlobalStyle />
-        <Navigation />
-        {children}
+        <Header />
+        <Container>
+            {children}
+        </Container>
     </>
 )
 

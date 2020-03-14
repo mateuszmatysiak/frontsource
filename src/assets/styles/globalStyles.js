@@ -20,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     font-family: 'Montserrat';
   }
+  input {
+    font-family: "Montserrat";
+  }
   p {
     font-size: 16px;
   }

@@ -15,8 +15,26 @@ const StyledNav = styled.nav`
     }
 
     a {
+        position: relative;
         text-decoration: none;
         color: inherit;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: auto;
+            width: 0%;
+            background-color: #3F51B5;
+            height: 2px;
+            transition: all .5s;
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
     }
 `;
 
@@ -27,27 +45,19 @@ const StyledNavList = styled.ul`
 
 const StyledNavListItem = styled.li`
     color: #707070;
+
     &:not(:nth-last-child(1)) {
         padding-right: 60px;
-    }
-
-    &:hover:after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        margin-top: 5px;
-        background-color: #3F51B5;
     }
 `;
 
 const Navigation = () => (
     <StyledNav>
         <StyledNavList>
-            <StyledNavListItem><Link>Blog</Link></StyledNavListItem>
-            <StyledNavListItem><Link>Frontsource</Link></StyledNavListItem>
-            <StyledNavListItem><Link>O mnie</Link></StyledNavListItem>
-            <StyledNavListItem><Link>Kontakt</Link></StyledNavListItem>
+            <StyledNavListItem><Link to="/blog" >Blog</Link></StyledNavListItem>
+            <StyledNavListItem><Link to="/frontsource" >Frontsource</Link></StyledNavListItem>
+            <StyledNavListItem><Link to="/about" >O mnie</Link></StyledNavListItem>
+            <StyledNavListItem><Link to="/contact" >Kontakt</Link></StyledNavListItem>
         </StyledNavList>
     </StyledNav>
 )
