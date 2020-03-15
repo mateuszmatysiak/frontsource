@@ -3,21 +3,18 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 120px;
-        background-color: #F7F7F7;
-        z-index: -1;
+    margin-right: 50px;
+    ul {
+        display: flex;
+        flex-direction: ${({ orientation }) => orientation === "vertical" ? "column" : "row"};
     }
-
+    li {
+        &:not(:last-child) {
+            padding: ${({ orientation }) => orientation === "vertical" ? "0 0 15px 0" : "0 60px 0 0"}
+        }
+    }    
     a {
         position: relative;
-        text-decoration: none;
-        color: inherit;
         
         &:after {
             content: '';
@@ -27,7 +24,7 @@ const StyledNav = styled.nav`
             transform: translate(-50%, -50%);
             margin: auto;
             width: 0%;
-            background-color: #3F51B5;
+            background-color: ${({ theme }) => theme.font.globalActive};
             height: 2px;
             transition: all .5s;
         }
@@ -38,27 +35,21 @@ const StyledNav = styled.nav`
     }
 `;
 
-const StyledNavList = styled.ul`
-    display: flex;
-    list-style: none;
-`;
-
-const StyledNavListItem = styled.li`
-    color: #707070;
-
-    &:not(:nth-last-child(1)) {
-        padding-right: 60px;
-    }
-`;
-
-const Navigation = () => (
-    <StyledNav>
-        <StyledNavList>
-            <StyledNavListItem><Link to="/blog" >Blog</Link></StyledNavListItem>
-            <StyledNavListItem><Link to="/frontsource" >Frontsource</Link></StyledNavListItem>
-            <StyledNavListItem><Link to="/about" >O mnie</Link></StyledNavListItem>
-            <StyledNavListItem><Link to="/contact" >Kontakt</Link></StyledNavListItem>
-        </StyledNavList>
+const Navigation = ({ data, orientation }) => (
+    <StyledNav orientation={orientation}>
+        <ul>
+            {data
+                ? data.map(({ to, name }) => (
+                    <li key={name}><Link to={to}>{name}</Link></li>
+                ))
+                : <>
+                    <li><Link to="/blog" >Blog</Link></li>
+                    <li><Link to="/frontsource" >Frontsource</Link></li>
+                    <li><Link to="/about" >O mnie</Link></li>
+                    <li><Link to="/contact" >Kontakt</Link></li>
+                </>
+            }
+        </ul>
     </StyledNav>
 )
 

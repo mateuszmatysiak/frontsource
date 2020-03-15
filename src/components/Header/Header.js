@@ -9,37 +9,52 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
 
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        background-color: ${({ theme }) => theme.background.lightSemiWhite};
+        z-index: -1;
+    }
+
     & button {
         background-color: transparent;
         border: none;
         margin: 0 2px;
     }
+
+    img {
+        width: 20px;
+    }
 `;
 
-const StyledImg = styled.img`
-    width: 20px;
-    margin: 0 40px 0 50px;
-`;
-
-const StyledRightBar = styled.div`
+const StyledHeaderItem = styled.div`
     display: flex;
     align-items: center;
 `;
+
+const StyledButtonWrapper = styled.div`
+    margin-left: 40px;
+`;
+
 
 
 const Header = () => {
     return (
         <StyledHeader>
             <Navigation />
-            <StyledRightBar>
+            <StyledHeaderItem>
                 <SearchInput />
-                <StyledImg src={MoonIcon} />
-                <div>
+                <button><img src={MoonIcon} alt="Moon icon" /></button>
+                <StyledButtonWrapper>
                     <button>PL</button>
                     |
                     <button>EN</button>
-                </div>
-            </StyledRightBar>
+                </StyledButtonWrapper>
+            </StyledHeaderItem>
         </StyledHeader>
     );
 };

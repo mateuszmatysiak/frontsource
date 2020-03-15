@@ -4,6 +4,7 @@ import SearchIcon from '../../assets/images/search.svg';
 
 const StyledLabel = styled.label`
     position: relative;
+    margin-right: 40px;
 `;
 
 const StyledInput = styled.input`
@@ -11,13 +12,9 @@ const StyledInput = styled.input`
     padding-left: 26px;
     outline: none;
     border: none;
-    border-bottom: 1px solid #707070;
+    border-bottom: ${({ theme }) => `1px solid ${theme.font.lightDefault}`};
     background-color: transparent;
     font-size: 15px;
-
-    &:focus {
-        border-bottom: 2px solid #707070;
-    }
 `;
 
 const StyledImg = styled.img`
