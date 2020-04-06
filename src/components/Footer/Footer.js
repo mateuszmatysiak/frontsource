@@ -4,6 +4,7 @@ import Navigation from '../Navigation';
 import TwitterIcon from '../../assets/images/twitter.svg';
 import GithubIcon from '../../assets/images/github.svg';
 import LinkedinIcon from '../../assets/images/linkedin.svg';
+import { navigation, subNavigation } from '../../utils/global';
 
 const StyledFooter = styled.footer`
     display: flex;
@@ -25,6 +26,11 @@ const StyledNavWrapper = styled.div`
     display: flex;
 `;
 
+const StyledInfoWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 const StyledLink = styled.a`
     &:nth-child(2) {
         margin: 0 40px;
@@ -37,23 +43,17 @@ const StyledLink = styled.a`
 `;
 
 const StyledTypography = styled.span`
-    text-transform: uppercase;
-    font-weight: 500;
+    margin-bottom: 10px;
 `;
 
-const subNavigation = [
-    { name: "Wszystko", to: "/blog" },
-    { name: "Zdrowie", to: "/blog" },
-    { name: "Sport", to: "/blog" },
-    { name: "Norwegia", to: "/blog" },
-]
+
 
 const Footer = () => {
     return (
         <StyledFooter>
             <StyledNavWrapper>
-                <Navigation orientation="vertical" />
-                <Navigation data={subNavigation} orientation="vertical" />
+                {/* <Navigation data={navigation} orientation="vertical" /> */}
+                {/* <Navigation data={subNavigation} orientation="vertical" /> */}
             </StyledNavWrapper>
             <div>
                 <StyledLink target="_blank" href="https://github.com/mateuszmatysiak">
@@ -66,7 +66,11 @@ const Footer = () => {
                     <img src={TwitterIcon} alt="Twitter icon" />
                 </StyledLink>
             </div>
-            <StyledTypography>Mateusz Matysiak</StyledTypography>
+            <StyledInfoWrapper>
+                <StyledTypography>Mateusz Matysiak</StyledTypography>
+                <StyledTypography>testowyxyz@gmail.com</StyledTypography>
+                <StyledTypography>123 456 789</StyledTypography>
+            </StyledInfoWrapper>
         </StyledFooter>
     );
 };

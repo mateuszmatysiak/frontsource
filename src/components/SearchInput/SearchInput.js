@@ -1,10 +1,15 @@
 import React from "react"
 import styled from 'styled-components';
 import SearchIcon from '../../assets/images/search.svg';
+import { down } from 'styled-breakpoints';
 
 const StyledLabel = styled.label`
     position: relative;
     margin-right: 40px;
+
+    ${down('xs')} {
+        display: none;
+    }
 `;
 
 const StyledInput = styled.input`

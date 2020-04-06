@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { down } from 'styled-breakpoints';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -15,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 60px 65px 0;
     font-family: 'Montserrat';
     color: ${({ theme }) => theme.font.lightDefault};
+
+    ${down('xs')} {
+      padding: 50px 30px 0;
+    }
   }
   body::-webkit-scrollbar {
     width: 10px;

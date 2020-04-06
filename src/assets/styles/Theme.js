@@ -13,6 +13,12 @@ const theme = {
         globalActive: "#3F51B5",
         lightDefault: "#707070",
         darkDefault: "#CCCCCC",
+    },
+    breakpoints: {
+        xs: "600px",
+        sm: "960px",
+        md: "1280px",
+        lg: "1920px",
     }
 }
 
