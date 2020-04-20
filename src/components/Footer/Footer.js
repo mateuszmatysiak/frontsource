@@ -4,7 +4,7 @@ import Navigation from '../Navigation';
 import TwitterIcon from '../../assets/images/twitter.svg';
 import GithubIcon from '../../assets/images/github.svg';
 import LinkedinIcon from '../../assets/images/linkedin.svg';
-import { navigation, subNavigation } from '../../utils/global';
+
 
 const StyledFooter = styled.footer`
     display: flex;

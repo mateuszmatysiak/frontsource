@@ -13,13 +13,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0 auto;
     max-width: 1280px;
-    padding: 60px 65px 0;
+    padding: 0 65px;
     font-family: 'Montserrat';
     color: ${({ theme }) => theme.font.lightDefault};
-
-    ${down('xs')} {
-      padding: 50px 30px 0;
-    }
   }
   body::-webkit-scrollbar {
     width: 10px;

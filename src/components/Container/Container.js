@@ -4,11 +4,7 @@ import { down } from 'styled-breakpoints';
 
 const StyledContainer = styled.main`
     min-height: 100vh;
-    padding-top: 75px;
-
-    ${down('xs')} {
-        padding-top: 60px;
-    }
+    padding-top: 35px;
 `;
 
 const Container = ({ children }) => (
