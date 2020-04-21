@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navigation from '../Navigation';
+// import Navigation from '../Navigation';
 import TwitterIcon from '../../assets/images/twitter.svg';
 import GithubIcon from '../../assets/images/github.svg';
 import LinkedinIcon from '../../assets/images/linkedin.svg';

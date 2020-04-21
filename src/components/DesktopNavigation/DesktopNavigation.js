@@ -1,8 +1,11 @@
 import React from "react"
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import SearchInput from "../SearchInput";
 
 const StyledNav = styled.nav`
+    display: flex;
+    align-items: center;
     margin-left: 50px;
 `;
 
@@ -27,15 +30,16 @@ const StyledNavListLink = styled(Link)`
     }
 `;
 
-const Navigation = ({ data }) => (
+const DesktopNavigation = ({ data }) => (
     <StyledNav >
         <StyledNavList>
-            {data.map(({ to, name }) =>
-                <StyledNavListItem>
+            {data.map(({ to, name }, index) =>
+                <StyledNavListItem key={index}>
                     <StyledNavListLink to={to}>{name}</StyledNavListLink>
                 </StyledNavListItem>)}
         </StyledNavList>
+        <SearchInput />
     </StyledNav>
 )
 
-export default Navigation
+export default DesktopNavigation

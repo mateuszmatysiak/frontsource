@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navigation from "../Navigation/Navigation";
-import SearchInput from "../SearchInput/SearchInput";
+import DesktopNavigation from "../DesktopNavigation";
+import MobileNavigation from "../MobileNavigation";
 import { mainNavigation } from '../../utils/navigation';
+import Logo from "../../assets/images/logo.png";
 
 const StyledHeader = styled.header`
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
+    margin: 0 16px;
 
     &:before {
         content: "";
@@ -22,10 +24,11 @@ const StyledHeader = styled.header`
     }
 `;
 
-const StyledNavigationWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+const NavLogo = styled.picture`
+    background: url(${Logo}) center center no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 80px;
 `;
 
 
@@ -33,10 +36,9 @@ const Header = () => {
 
     return (
         <StyledHeader>
-            {/* <StyledNavigationWrapper>
-                <Navigation data={mainNavigation} />
-                <SearchInput />
-            </StyledNavigationWrapper> */}
+            <NavLogo />
+            <MobileNavigation/>
+            <DesktopNavigation data={mainNavigation} />
         </StyledHeader>
     );
 };
