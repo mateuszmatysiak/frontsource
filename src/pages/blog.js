@@ -1,29 +1,29 @@
 import React from "react"
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Article from '../components/Article';
 
-const ArticlesWrapper = styled.div`
+const ArticlesWrapper = styled.section`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 30px 0 125px 0;
+    justify-content: center;
+    align-items: flex-start; 
 `;
 
-const BlogPage = () => (
-    <>
-        <ArticlesWrapper>
-            <Article/>
-            <Article/>
-            <Article/>
-            <Article/>
-            <Article/>
-            <Article/>
-            <Article/>
-            <Article/>
-            <Article/>
-        </ArticlesWrapper>
-    </>
-)
+const BlogPage = () => {
+    return (
+        <>
+            <ArticlesWrapper>
+                <Article large />
+                <Article />
+                <Article />
+                <Article />
+                <Article />
+                <Article />
+                <Article />
+                <Article />
+            </ArticlesWrapper>
+        </>
+    )
+}
 
 export default BlogPage

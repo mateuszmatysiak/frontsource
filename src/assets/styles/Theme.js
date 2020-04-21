@@ -20,9 +20,11 @@ const theme = {
         tertiary: "#CCCCCC"
     },
     breakpoints: {
+        xxxs: "0",
+        xxs: "360px",
         xs: "600px",
-        sm: "960px",
-        md: "1024px",
+        sm: "783px",
+        md: "1156px",
         lg: "1280px",
     }
 }

@@ -33,10 +33,10 @@ const Header = () => {
 
     return (
         <StyledHeader>
-            <StyledNavigationWrapper>
+            {/* <StyledNavigationWrapper>
                 <Navigation data={mainNavigation} />
                 <SearchInput />
-            </StyledNavigationWrapper>
+            </StyledNavigationWrapper> */}
         </StyledHeader>
     );
 };

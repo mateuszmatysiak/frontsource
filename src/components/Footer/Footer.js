@@ -51,9 +51,9 @@ const StyledTypography = styled.span`
 const Footer = () => {
     return (
         <StyledFooter>
-            <StyledNavWrapper>
-                {/* <Navigation data={navigation} orientation="vertical" /> */}
-                {/* <Navigation data={subNavigation} orientation="vertical" /> */}
+            {/* <StyledNavWrapper>
+                <Navigation data={navigation} orientation="vertical" /> 
+                <Navigation data={subNavigation} orientation="vertical" />
             </StyledNavWrapper>
             <div>
                 <StyledLink target="_blank" href="https://github.com/mateuszmatysiak">
@@ -70,7 +70,7 @@ const Footer = () => {
                 <StyledTypography>Mateusz Matysiak</StyledTypography>
                 <StyledTypography>testowyxyz@gmail.com</StyledTypography>
                 <StyledTypography>123 456 789</StyledTypography>
-            </StyledInfoWrapper>
+            </StyledInfoWrapper> */}
         </StyledFooter>
     );
 };
