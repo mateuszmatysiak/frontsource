@@ -107,6 +107,7 @@ const Title = styled.h3`
     line-height: 27px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: ${({ theme }) => theme.font.black};
     display: -webkit-box;
    -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;

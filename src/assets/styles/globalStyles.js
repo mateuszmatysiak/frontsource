@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { down } from 'styled-breakpoints';
+import { createGlobalStyle } from "styled-components"
+import { down } from "styled-breakpoints"
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
   }
   body {
     margin: 0 auto;
@@ -46,6 +48,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

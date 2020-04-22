@@ -13,7 +13,7 @@ const StyledHamburger = styled.button`
   background-color: transparent;
   outline: none;
   box-sizing: content-box;
-  z-index: 2;
+  z-index: 3;
 
   ${up("md")} {
     display: none;
@@ -65,6 +65,7 @@ const StyledNav = styled.nav`
     height: 100vh;
     background: ${({ theme }) => theme.font.primary};
     transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+    z-index: 2;
 
     ${({ open }) =>
     open &&
