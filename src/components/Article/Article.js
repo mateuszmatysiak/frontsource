@@ -22,28 +22,28 @@ const ArticleWrapper = styled.article`
         box-shadow: 0 0 30px 0 rgba(0,0,0,0.2);
     }
 
-    ${down('sm')} {
+    ${down('md')} {
         min-width: 330px;
         flex-grow: 1;
     }
 
-    ${down('xxxs')} {
+    ${down('xxs')} {
         min-width: 300px;
     }
 
     ${({ large }) =>
         large &&
         css`
-            ${up('lg')} {
+            ${up('xl')} {
                 flex-direction: row;
                 flex: 0 0 calc(66.66% - 32px);
             }
 
-            ${down('md')} {
+            ${down('lg')} {
                 flex: 0 0 calc(33.33% - 32px);
             }
 
-            ${down('sm')} {
+            ${down('md')} {
                 flex-grow: 1;
             }
     `}
@@ -57,7 +57,7 @@ const ArticleImg = styled.picture`
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 
-    ${up('lg')} {
+    ${up('xl')} {
         ${({ large }) =>
         large &&
         css`
@@ -92,7 +92,7 @@ const Tag = styled(Link)`
         color: ${({ theme }) => theme.font.secondary};
     }
 
-    ${up('lg')} {
+    ${up('xl')} {
         ${({ large }) =>
         large &&
         css`
@@ -111,7 +111,7 @@ const Title = styled.h3`
    -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;
 
-   ${up('lg')} {
+   ${up('xl')} {
         ${({ large }) =>
         large &&
         css`
@@ -131,7 +131,7 @@ const DescriptionWrapper = styled.div`
    -webkit-box-orient: vertical;
     overflow: hidden;
 
-    ${up('lg')} {
+    ${up('xl')} {
         ${({ large }) =>
         large &&
         css`
@@ -151,7 +151,7 @@ const Description = styled.p`
     line-height: 22px;
     letter-spacing: 1px;
 
-    ${up('lg')} {
+    ${up('xl')} {
         ${({ large }) =>
         large &&
         css`
@@ -166,7 +166,7 @@ const AuthorWrapper = styled.div`
     margin: 0 16px 16px;
     ${tooltip()}
 
-    ${up('lg')} {
+    ${up('xl')} {
         ${({ large }) =>
         large &&
         css`
@@ -179,7 +179,7 @@ const Author = styled.p`
     font-size: 12px;
     color: ${({ theme }) => theme.font.secondary};
 
-    ${up('lg')} {
+    ${up('xl')} {
         ${({ large }) =>
         large &&
         css`
@@ -196,7 +196,7 @@ const AuthorImg = styled.picture`
     border-radius: 50%;
     margin-right: 8px;
 
-    ${up('lg')} {
+    ${up('xl')} {
         ${({ large }) =>
         large &&
         css`

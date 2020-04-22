@@ -2,11 +2,16 @@ import React from "react"
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import SearchInput from "../SearchInput";
+import { down } from 'styled-breakpoints';
 
 const StyledNav = styled.nav`
     display: flex;
     align-items: center;
     margin-left: 50px;
+
+    ${down("sm")} {
+        display: none;
+    }
 `;
 
 const StyledNavList = styled.ul`

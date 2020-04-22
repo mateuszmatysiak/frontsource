@@ -37,7 +37,7 @@ const Header = () => {
     return (
         <StyledHeader>
             <NavLogo />
-            <MobileNavigation/>
+            <MobileNavigation data={mainNavigation}/>
             <DesktopNavigation data={mainNavigation} />
         </StyledHeader>
     );
