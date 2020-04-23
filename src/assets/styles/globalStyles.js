@@ -13,8 +13,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body {
-    margin: 0 auto;
-    max-width: 1280px;
     font-family: 'Montserrat';
     color: ${({ theme }) => theme.font.lightDefault};
   }

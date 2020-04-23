@@ -127,7 +127,7 @@ const NewsletterCheckboxWrapper = styled.div`
 `
 
 const NewsletterCheckbox = styled.input`
-  margin: 15px 10px 0 0;
+  margin: 5px 10px 0 0;
 `
 
 const NewsletterCheckboxLabel = styled.label`

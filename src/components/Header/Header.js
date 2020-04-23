@@ -10,7 +10,9 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    margin: 0 16px;
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 1280px;
 
     &:before {
         content: "";
