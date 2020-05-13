@@ -16,7 +16,6 @@ const ArticleWrapper = styled.article`
     border-radius: 4px;
     min-height: 500px;
     transition: box-shadow .3s;
-    cursor: pointer;
 
     &:hover {
         box-shadow: 0 0 30px 0 rgba(0,0,0,0.2);
@@ -87,6 +86,7 @@ const Tag = styled(Link)`
     font-size: 13px;
     transition: color .3s;
     ${tooltip()}
+    cursor: pointer;
 
     &:hover {
         color: ${({ theme }) => theme.font.secondary};
@@ -101,16 +101,18 @@ const Tag = styled(Link)`
     }
 `;
 
-const Title = styled.h3`
+const Title = styled(Link)`
     margin: 0 16px 16px;
     font-size: 18px;
     line-height: 27px;
+    font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     color: ${({ theme }) => theme.font.black};
     display: -webkit-box;
    -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;
+   cursor: pointer;
 
    ${up('xl')} {
         ${({ large }) =>
@@ -124,13 +126,14 @@ const Title = styled.h3`
    }
 `;
 
-const DescriptionWrapper = styled.div`
+const DescriptionWrapper = styled(Link)`
     max-height: 110px;
     margin: 0 16px 16px;
     display: -webkit-box;
    -webkit-line-clamp: 5;
    -webkit-box-orient: vertical;
     overflow: hidden;
+    cursor: pointer;
 
     ${up('xl')} {
         ${({ large }) =>
@@ -214,8 +217,8 @@ const Article = ({ large }) => {
             <ArticleImg large={isLarge} />
             <ArticleContentWrapper>
                 <Tag to="/frontsource" title="Kategoria: Frontsource" large={isLarge} >Frontsource</Tag>
-                <Title large={isLarge}>What is Lorem Ipsum?</Title>
-                <DescriptionWrapper large={isLarge}>
+                <Title large={isLarge} to="/article">What is Lorem Ipsum?</Title>
+                <DescriptionWrapper large={isLarge} to="/article">
                     <Description large={isLarge}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..</Description>
                 </DescriptionWrapper>
                 <AuthorWrapper title="Autor" large={isLarge}>
