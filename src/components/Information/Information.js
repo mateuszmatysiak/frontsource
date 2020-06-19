@@ -81,7 +81,7 @@ const Information = () => {
         <StyledDescriptionWrapper>
           <StyledTitle>Gdzie mnie znajdziesz?</StyledTitle>
           <StyledDescription>
-            Moje projekty, informacje o mnie i wiele wiecej...
+            Moje projekty, informacje o mnie i wiele więcej...
           </StyledDescription>
         </StyledDescriptionWrapper>
         <StyledIconsWrapper>

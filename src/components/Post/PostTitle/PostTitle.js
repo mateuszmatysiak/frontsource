@@ -5,6 +5,7 @@ import { down } from "styled-breakpoints"
 const StyledTitle = styled.h1`
   color: ${({ theme }) => theme.font.black};
   font-size: 32px;
+  width: 100%;
 
   ${down("sm")} {
     font-size: 28px;

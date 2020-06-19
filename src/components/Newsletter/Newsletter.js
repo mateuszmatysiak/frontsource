@@ -139,9 +139,9 @@ const NewsletterCheckboxLabel = styled.label`
 const Newsletter = () => {
   return (
     <NewsletterWrapper>
-      <NewsletterTitle>Blog poswiecony frontendowi.</NewsletterTitle>
+      <NewsletterTitle>Blog poświęcony frontendowi.</NewsletterTitle>
       <NewsletterSubtitle>
-        Dowiedz sie, jak pisac strony internetowe. Poznaj swiat frameworkow.
+        Dowiedz się, jak pisać strony internetowe. Poznaj świat frameworków.
       </NewsletterSubtitle>
       <NewsletterInputWrapper>
         <NewsletterInput
@@ -150,14 +150,14 @@ const Newsletter = () => {
           id="mail"
           placeholder="Adres e-mail"
         />
-        <NewsletterButton>Zapisz sie</NewsletterButton>
+        <NewsletterButton>Zapisz się</NewsletterButton>
       </NewsletterInputWrapper>
       <NewsletterCheckboxWrapper>
         <NewsletterCheckbox type="checkbox" id="checkbox" />
         <NewsletterCheckboxLabel htmlFor="checkbox">
-          Wyrazam zgode na kontaktowanie sie ze mna poprzez newsletter w celu
-          informowania mnie o nowościach w Frontsource oraz akceptuje polityke
-          prywatnosci.*
+          Wyrażam zgodę na kontaktowanie się ze mna poprzez newsletter w celu
+          informowania mnie o nowościach w Frontsource oraz akceptuję polityke
+          prywatności.*
         </NewsletterCheckboxLabel>
       </NewsletterCheckboxWrapper>
     </NewsletterWrapper>

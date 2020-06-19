@@ -5,7 +5,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: ${({ numberOfArticles }) =>
-    numberOfArticles >= 2 ? "flex-start" : "center"};
+    numberOfArticles <= 2 ? "flex-start" : "center"};
   align-items: flex-start;
   max-width: 1280px;
   margin: 0 auto 30px;

@@ -2,7 +2,6 @@ import React from "react"
 import styled, { css } from "styled-components"
 import { up, down } from "styled-breakpoints"
 import PropTypes from "prop-types"
-import Image from "gatsby-image"
 import ArticleTag from "./ArticleTag"
 import ArticleDescription from "./ArticleDescription"
 import ArticleAuthor from "./ArticleAuthor"
@@ -17,7 +16,7 @@ const ArticleWrapper = styled.article`
   min-width: 350px;
   border: ${({ theme }) => `1px solid ${theme.background.light.tertiary}`};
   border-radius: 4px;
-  min-height: 500px;
+  height: 500px;
   transition: box-shadow 0.3s;
 
   &:hover {
@@ -64,21 +63,22 @@ const Article = ({ large, data }) => {
     image: { fluid },
     title,
     author,
+    tag,
     articleDescription,
     meta: { firstPublishedAt },
     slug,
   } = data
-
+  console.log(data)
   return (
     <ArticleWrapper large={isLarge}>
       <ArticleImage large={isLarge} fluid={fluid} />
       <ArticleContentWrapper>
         <ArticleTag
-          to="/frontsource"
-          title="Kategoria: Frontsource"
+          to={`blog/category/${tag}`}
+          title={`Kategoria: ${tag}`}
           large={isLarge}
         >
-          Frontsource
+          {tag}
         </ArticleTag>
         <ArticleTitle large={isLarge} to={`/blog/${slug}`}>
           {title}

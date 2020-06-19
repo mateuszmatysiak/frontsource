@@ -1,16 +1,22 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import Image from "gatsby-image"
 
 const StyledImage = styled(Image)`
   width: 100%;
-  height: 350px;
   border-radius: 2px;
   margin-bottom: 30px;
+
+  ${({ post }) =>
+    post &&
+    css`
+      width: 100%;
+      max-height: 300px;
+    `}
 `
 
-const PostImage = ({ fluid }) => {
-  return <StyledImage fluid={fluid} />
+const PostImage = ({ fluid, post }) => {
+  return <StyledImage fluid={fluid} post={post} />
 }
 
 export default PostImage

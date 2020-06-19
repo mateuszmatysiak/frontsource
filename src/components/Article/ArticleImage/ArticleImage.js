@@ -1,13 +1,13 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { up, down } from "styled-breakpoints"
+import { up } from "styled-breakpoints"
 import Image from "gatsby-image"
 
 const StyledImage = styled(Image)`
   background-size: cover;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  max-height: 220px;
+  max-height: 200px;
 
   ${up("xl")} {
     ${({ large }) =>

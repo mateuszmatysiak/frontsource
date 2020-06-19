@@ -7,7 +7,32 @@ import PostTitle from "../components/Post/PostTitle"
 import Post from "../components/Post"
 import generatePost from "../utils/generatePost"
 
-export const queryArticle = graphql`
+const PostLayout = ({ data: { datoCmsArticle } }) => {
+  const {
+    title,
+    author,
+    image: { fluid },
+    meta: { firstPublishedAt },
+    articleContent,
+  } = datoCmsArticle
+
+  return (
+    <Post>
+      <PostTag backTo="/blog" tagTo={`blog/category/${0}`}>
+        {0}
+      </PostTag>
+      <PostImage fluid={fluid} />
+      <PostTitle>{title}</PostTitle>
+      <PostAuthor title="Autor" large>
+        {author}, {firstPublishedAt}
+      </PostAuthor>
+
+      {generatePost(articleContent)}
+    </Post>
+  )
+}
+
+export const query = graphql`
   query querySingleArticle($id: String!) {
     datoCmsArticle(id: { eq: $id }) {
       title
@@ -25,8 +50,8 @@ export const queryArticle = graphql`
           paragraphContent
         }
         ... on DatoCmsArticleImage {
-          imageData {
-            fluid(maxWidth: 800, maxHeight: 400) {
+          imageContent {
+            fluid(maxWidth: 800, maxHeight: 300) {
               ...GatsbyDatoCmsFluid_tracedSVG
             }
           }
@@ -38,28 +63,5 @@ export const queryArticle = graphql`
     }
   }
 `
-
-const PostLayout = ({ data: { datoCmsArticle } }) => {
-  const {
-    title,
-    author,
-    image: { fluid },
-    meta: { firstPublishedAt },
-    articleContent,
-  } = datoCmsArticle
-
-  return (
-    <Post>
-      <PostTag to="/blog">Frontsource</PostTag>
-      <PostImage fluid={fluid} />
-      <PostTitle>{title}</PostTitle>
-      <PostAuthor title="Autor" large>
-        {author}, {firstPublishedAt}
-      </PostAuthor>
-
-      {generatePost(articleContent)}
-    </Post>
-  )
-}
 
 export default PostLayout

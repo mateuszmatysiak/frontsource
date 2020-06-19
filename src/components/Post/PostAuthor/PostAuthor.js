@@ -7,14 +7,15 @@ import tooltip from "../../../utils/tooltip"
 const AuthorWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 16px 16px 32px 0;
+  padding: 16px 16px 32px 0;
+  width: 100%;
   ${tooltip()}
 
   ${up("xl")} {
     ${({ large }) =>
       large &&
       css`
-        margin: 16px 32px 32px 0;
+        padding: 16px 32px 32px 0;
       `}
   }
 `

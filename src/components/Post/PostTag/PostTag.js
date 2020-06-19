@@ -11,7 +11,7 @@ const PostTagWrapper = styled.div`
   margin-bottom: 20px;
 `
 
-const Tag = styled.div`
+const Tag = styled(Link)`
   background-color: ${({ theme }) => theme.font.primary};
   color: ${({ theme }) => theme.font.white};
   padding: 8px;
@@ -26,13 +26,13 @@ const StyledBackIcon = styled.img`
   margin-right: 20px;
 `
 
-const PostTag = ({ children, to }) => {
+const PostTag = ({ children, backTo, tagTo }) => {
   return (
     <PostTagWrapper>
-      <Link to={to}>
+      <Link to={backTo}>
         <StyledBackIcon src={BackIcon} />
       </Link>
-      <Tag>{children}</Tag>
+      <Tag to={tagTo}>{children}</Tag>
     </PostTagWrapper>
   )
 }

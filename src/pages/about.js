@@ -70,14 +70,20 @@ const StyledContentTitle = styled.h2`
   font-weight: 500;
 `
 
-const AboutPage = ({ data }) => (
+const AboutPage = ({
+  data: {
+    file: {
+      childImageSharp: { fluid },
+    },
+  },
+}) => (
   <ArticlesWrapper>
     <StyledTitle>O mnie</StyledTitle>
     <StyledWrapper>
       <StyledImageWrapper>
-        <StyledImage fluid={data.file.childImageSharp.fluid} />
-        <StyledImage fluid={data.file.childImageSharp.fluid} />
-        <StyledImage fluid={data.file.childImageSharp.fluid} />
+        <StyledImage fluid={fluid} />
+        <StyledImage fluid={fluid} />
+        <StyledImage fluid={fluid} />
       </StyledImageWrapper>
       <StyledContentWrapper>
         <StyledContentTitle>Czesc, jestem Mateusz!</StyledContentTitle>
@@ -119,7 +125,7 @@ export const query = graphql`
     file(name: { eq: "example1" }) {
       childImageSharp {
         fluid(maxWidth: 400, maxHeight: 400) {
-          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

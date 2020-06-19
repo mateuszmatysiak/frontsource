@@ -5,7 +5,7 @@ const PostWrapper = styled.section`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   max-width: 800px;
   min-height: 100vh;
   margin: 0 auto 30px;

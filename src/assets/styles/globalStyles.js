@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import { down } from "styled-breakpoints"
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -11,9 +10,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat';
   }
   body {
-    font-family: 'Montserrat';
     color: ${({ theme }) => theme.font.lightDefault};
   }
   body::-webkit-scrollbar {
@@ -29,10 +28,6 @@ const GlobalStyle = createGlobalStyle`
   button {
     padding: 0;
     cursor: pointer;
-    font-family: 'Montserrat';
-  }
-  input {
-    font-family: "Montserrat";
   }
   p {
     font-size: 16px;

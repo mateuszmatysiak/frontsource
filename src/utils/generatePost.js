@@ -13,7 +13,7 @@ export default data =>
       case "paragraphContent":
         return <PostParagraph key={index}>{item[itemKey]}</PostParagraph>
       case "imageContent":
-        return <PostImage key={index} src={item[itemKey].url} />
+        return <PostImage key={index} post fluid={item[itemKey].fluid} />
       default:
         return null
     }
