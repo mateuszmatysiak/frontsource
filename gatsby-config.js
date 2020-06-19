@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 module.exports = {
+  pathPrefix: "/Frontsource",
   siteMetadata: {
     title: `Frontsource`,
     description: `Blog`,
