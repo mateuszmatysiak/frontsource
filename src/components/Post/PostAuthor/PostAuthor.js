@@ -33,7 +33,7 @@ const Author = styled.p`
   }
 `
 
-const AuthorImg = styled.div`
+const AuthorImage = styled.div`
   background: url(${Avatar}) center center no-repeat;
   background-size: cover;
   width: 32px;
@@ -54,7 +54,7 @@ const AuthorImg = styled.div`
 const PostAuthor = ({ title, large, children }) => {
   return (
     <AuthorWrapper title={title} large={large}>
-      <AuthorImg large={large} />
+      <AuthorImage large={large} />
       <Author large={large}>{children}</Author>
     </AuthorWrapper>
   )

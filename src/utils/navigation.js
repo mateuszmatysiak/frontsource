@@ -1,6 +1,5 @@
 export const mainNavigation = [
-    { name: "Blog", to: "/blog" },
-    // { name: "Frontsource", to: "/frontsource" },
-    { name: "O mnie", to: "/about" },
+    { name: "Blog", to: "/" },
+    { name: "O mnie", to: "https://matysiakmateusz.pl" },
     { name: "Kontakt", to: "/contact" },
 ]

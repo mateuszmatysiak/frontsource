@@ -37,6 +37,10 @@ const StyledNavListLink = styled(Link)`
   }
 `
 
+const StyledNavListLinkOut = styled.a`
+  ${StyledNavListLink}
+`
+
 const StyledDesktopSearchWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -125,11 +129,21 @@ const DesktopNavigation = ({ data }) => {
     <>
       <StyledNav>
         <StyledNavList>
-          {data.map(({ to, name }, index) => (
-            <StyledNavListItem key={index}>
-              <StyledNavListLink to={to}>{name}</StyledNavListLink>
-            </StyledNavListItem>
-          ))}
+          <StyledNavListItem>
+            <StyledNavListLink to="/blog">Blog</StyledNavListLink>
+          </StyledNavListItem>
+          <StyledNavListItem>
+            <StyledNavListLinkOut
+              href="https://matysiakmateusz.pl"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              O mnie
+            </StyledNavListLinkOut>
+          </StyledNavListItem>
+          <StyledNavListItem>
+            <StyledNavListLink to="/contact">Kontakt</StyledNavListLink>
+          </StyledNavListItem>
         </StyledNavList>
         <StyleDesktopButton onClick={() => setOpen(!open)}>
           <StyledDesktopSearchIcon />

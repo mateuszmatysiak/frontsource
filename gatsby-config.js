@@ -43,7 +43,7 @@ module.exports = {
     //   options: {
     //     name: `gatsby-starter-default`,
     //     short_name: `starter`,
-    //     start_url: `/blog`,
+    //     start_url: `/`,
     //   },
     // },
     // this (optional) plugin enables Progressive Web App + Offline functionality

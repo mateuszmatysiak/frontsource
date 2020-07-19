@@ -4,14 +4,13 @@ import ArticlesWrapper from "../components/ArticlesWrapper"
 import ArticlesButton from "../components/ArticlesButton"
 import Article from "../components/Article"
 import Newsletter from "../components/Newsletter"
-import Information from "../components/Information"
 import { formatData } from "../utils/format";
 
 const BlogPage = ({ data }) => {
   const {
     allDatoCmsArticle: { edges },
   } = data
-  console.log(data)
+
   return (
     <>
       <Newsletter />
@@ -21,7 +20,6 @@ const BlogPage = ({ data }) => {
         ))}
         <ArticlesButton />
       </ArticlesWrapper>
-      <Information />
     </>
   )
 }

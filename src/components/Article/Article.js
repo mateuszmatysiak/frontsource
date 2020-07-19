@@ -68,7 +68,7 @@ const Article = ({ large, data }) => {
     meta: { firstPublishedAt },
     slug,
   } = data
-  console.log(data)
+
   return (
     <ArticleWrapper large={isLarge}>
       <ArticleImage large={isLarge} fluid={fluid} />
@@ -80,10 +80,10 @@ const Article = ({ large, data }) => {
         >
           {tag}
         </ArticleTag>
-        <ArticleTitle large={isLarge} to={`/blog/${slug}`}>
+        <ArticleTitle large={isLarge} to={`blog/${slug}`}>
           {title}
         </ArticleTitle>
-        <ArticleDescription large={isLarge} to={`/blog/${slug}`}>
+        <ArticleDescription large={isLarge} to={`blog/${slug}`}>
           {articleDescription}
         </ArticleDescription>
         <ArticleAuthor title="Author" large={isLarge}>
