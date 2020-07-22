@@ -1,24 +1,24 @@
-import React from "react"
-import styled, { css } from "styled-components"
-import { Link } from "gatsby"
-import { down } from "styled-breakpoints"
-import SearchIcon from "../../assets/images/search.svg"
-import ReSearchIcon from "../../assets/images/research.svg"
-import CloseIcon from "../../assets/images/close.svg"
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { Link } from 'gatsby';
+import { down } from 'styled-breakpoints';
+import SearchIcon from '../../assets/images/search.svg';
+import ReSearchIcon from '../../assets/images/research.svg';
+import CloseIcon from '../../assets/images/close.svg';
 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   margin-left: 50px;
 
-  ${down("sm")} {
+  ${down('sm')} {
     display: none;
   }
-`
+`;
 
 const StyledNavList = styled.ul`
   display: flex;
-`
+`;
 
 const StyledNavListItem = styled.li`
   margin-left: 32px;
@@ -26,7 +26,7 @@ const StyledNavListItem = styled.li`
   font-size: 14px;
   font-weight: 600;
   color: ${({ theme }) => theme.font.secondary};
-`
+`;
 
 const StyledNavListLink = styled(Link)`
   position: relative;
@@ -35,11 +35,16 @@ const StyledNavListLink = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.font.primary};
   }
-`
+`;
 
 const StyledNavListLinkOut = styled.a`
-  ${StyledNavListLink}
-`
+  position: relative;
+  transition: color 0.5s;
+
+  &:hover {
+    color: ${({ theme }) => theme.font.primary};
+  }
+`;
 
 const StyledDesktopSearchWrapper = styled.div`
   display: flex;
@@ -59,7 +64,7 @@ const StyledDesktopSearchWrapper = styled.div`
     css`
       transform: translateX(0);
     `}
-`
+`;
 
 const StyledDesktopSearchIcon = styled.picture`
   background: url(${SearchIcon}) center center no-repeat;
@@ -69,20 +74,20 @@ const StyledDesktopSearchIcon = styled.picture`
   background-size: contain;
   margin-top: 2px;
   margin-left: 16px;
-`
+`;
 
 const StyleDesktopButton = styled.button`
   background-color: transparent;
   border: none;
   outline: none;
-`
+`;
 
 const StyledSearchInputWrapper = styled.div`
   position: relative;
   width: 60%;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -93,7 +98,7 @@ const StyledSearchInputWrapper = styled.div`
     background-size: contain;
     margin-left: 16px;
   }
-`
+`;
 
 const StyledSearchInput = styled.input`
   position: relative;
@@ -109,7 +114,7 @@ const StyledSearchInput = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.font.white};
   }
-`
+`;
 
 const StyledCloseButton = styled.button`
   position: absolute;
@@ -121,10 +126,10 @@ const StyledCloseButton = styled.button`
   height: 24px;
   border: unset;
   cursor: pointer;
-`
+`;
 
-const DesktopNavigation = ({ data }) => {
-  const [open, setOpen] = React.useState(false)
+const DesktopNavigation = () => {
+  const [open, setOpen] = React.useState(false);
   return (
     <>
       <StyledNav>
@@ -156,7 +161,7 @@ const DesktopNavigation = ({ data }) => {
         <StyledCloseButton onClick={() => setOpen(!open)} />
       </StyledDesktopSearchWrapper>
     </>
-  )
-}
+  );
+};
 
-export default DesktopNavigation
+export default DesktopNavigation;

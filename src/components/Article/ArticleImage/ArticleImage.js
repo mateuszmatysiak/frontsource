@@ -8,6 +8,7 @@ const StyledImage = styled(Image)`
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   max-height: 200px;
+  min-height: 200px;
 
   ${up("xl")} {
     ${({ large }) =>

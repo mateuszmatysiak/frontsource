@@ -1,7 +1,7 @@
-import React from "react"
-import styled, { css } from "styled-components"
-import { up } from "styled-breakpoints"
-import { Link } from "gatsby"
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
+import { up } from 'styled-breakpoints';
+import { Link } from 'gatsby';
 
 const StyledHamburger = styled.button`
   display: flex;
@@ -15,10 +15,10 @@ const StyledHamburger = styled.button`
   box-sizing: content-box;
   z-index: 3;
 
-  ${up("md")} {
+  ${up('md')} {
     display: none;
   }
-`
+`;
 
 const StyledHamburgerItem = styled.span`
   display: block;
@@ -54,20 +54,20 @@ const StyledHamburgerItem = styled.span`
         transform: rotate(45deg) translate(-2px, 3px);
       }
     `}
-`
+`;
 
 const StyledNav = styled.nav`
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    width: 100%;
-    height: 100vh;
-    background: ${({ theme }) => theme.font.primary};
-    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 100vh;
+  background: ${({ theme }) => theme.font.primary};
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+  z-index: 2;
 
-    ${({ open }) =>
+  ${({ open }) =>
     open &&
     css`
       transform: translateX(0);
@@ -75,25 +75,29 @@ const StyledNav = styled.nav`
 `;
 
 const StyledNavList = styled.ul`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `;
 
 const StyledNavListItem = styled.li`
-    color: white;
-    margin: 40px 0;
-    font-size: 24px;
+  color: white;
+  margin: 40px 0;
+  font-size: 24px;
 `;
 
 const StyledNavListLink = styled(Link)`
-    padding: 10px;
+  padding: 10px;
 `;
 
-const MobileNavigation = ({ data }) => {
-  const [open, setOpen] = React.useState(false)
+const StyledNavListLinkOut = styled.a`
+  ${StyledNavListLink}
+`;
+
+const MobileNavigation = () => {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <StyledHamburger onClick={() => setOpen(!open)}>
@@ -101,17 +105,27 @@ const MobileNavigation = ({ data }) => {
         <StyledHamburgerItem open={open} />
         <StyledHamburgerItem open={open} />
       </StyledHamburger>
-        <StyledNav open={open}>
-          <StyledNavList>
-            {data.map(({ to, name }, index) => (
-              <StyledNavListItem key={index}>
-                <StyledNavListLink to={to}>{name}</StyledNavListLink>
-              </StyledNavListItem>
-            ))}
-          </StyledNavList>
-        </StyledNav>
+      <StyledNav open={open}>
+        <StyledNavList>
+          <StyledNavListItem>
+            <StyledNavListLink to="/blog">Blog</StyledNavListLink>
+          </StyledNavListItem>
+          <StyledNavListItem>
+            <StyledNavListLinkOut
+              href="https://matysiakmateusz.pl/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              O mnie
+            </StyledNavListLinkOut>
+          </StyledNavListItem>
+          <StyledNavListItem>
+            <StyledNavListLink to="/contact">Kontakt</StyledNavListLink>
+          </StyledNavListItem>
+        </StyledNavList>
+      </StyledNav>
     </>
-  )
-}
+  );
+};
 
-export default MobileNavigation
+export default MobileNavigation;

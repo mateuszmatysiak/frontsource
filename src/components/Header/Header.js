@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import DesktopNavigation from "../DesktopNavigation"
 import MobileNavigation from "../MobileNavigation"
-import { mainNavigation } from "../../utils/navigation"
 import { Link } from "gatsby"
 import Logo from "../../assets/images/logo.svg"
 
@@ -37,8 +36,8 @@ const Header = () => {
       <Link to="/blog">
         <StyledLogo src={Logo} />
       </Link>
-      <MobileNavigation data={mainNavigation} />
-      <DesktopNavigation data={mainNavigation} />
+      <MobileNavigation />
+      <DesktopNavigation />
     </StyledHeader>
   )
 }

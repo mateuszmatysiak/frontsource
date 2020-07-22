@@ -11,7 +11,6 @@ const StyledImage = styled(Image)`
     post &&
     css`
       width: 100%;
-      max-height: 300px;
     `}
 `
 
