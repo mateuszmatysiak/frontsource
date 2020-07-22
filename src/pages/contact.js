@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { down } from 'styled-breakpoints';
+import { graphql } from 'gatsby';
 
 const ContactWrapper = styled.section`
   display: flex;

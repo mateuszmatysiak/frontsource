@@ -1,12 +1,12 @@
-import React from "react"
-import styled, { css } from "styled-components"
-import { up, down } from "styled-breakpoints"
-import PropTypes from "prop-types"
-import ArticleTag from "./ArticleTag"
-import ArticleDescription from "./ArticleDescription"
-import ArticleAuthor from "./ArticleAuthor"
-import ArticleImage from "./ArticleImage"
-import ArticleTitle from "./ArticleTitle"
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { up, down } from 'styled-breakpoints';
+import PropTypes from 'prop-types';
+import ArticleTag from './ArticleTag';
+import ArticleDescription from './ArticleDescription';
+import ArticleAuthor from './ArticleAuthor';
+import ArticleImage from './ArticleImage';
+import ArticleTitle from './ArticleTitle';
 
 const ArticleWrapper = styled.article`
   display: flex;
@@ -23,63 +23,70 @@ const ArticleWrapper = styled.article`
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
   }
 
-  ${down("md")} {
+  ${down('md')} {
     min-width: 330px;
     flex-grow: 1;
   }
 
-  ${down("xxs")} {
+  ${down('xxs')} {
     min-width: 300px;
   }
 
   ${({ large }) =>
     large &&
     css`
-      ${up("xl")} {
+      ${up('xl')} {
         flex-direction: row;
         flex: 0 0 calc(66.66% - 32px);
       }
 
-      ${down("lg")} {
+      ${down('lg')} {
         flex: 0 0 calc(33.33% - 32px);
       }
 
-      ${down("md")} {
+      ${down('md')} {
         flex-grow: 1;
       }
     `}
-`
+`;
 
 const ArticleContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1 1;
-`
+`;
 
 const Article = ({ large, data }) => {
-  const isLarge = large ? 1 : 0
+  const isLarge = large ? 1 : 0;
   const {
     image: { fluid },
     title,
     author,
-    tag,
+    tags,
     articleDescription,
     meta: { firstPublishedAt },
     slug,
-  } = data
+  } = data;
 
   return (
     <ArticleWrapper large={isLarge}>
       <ArticleImage large={isLarge} fluid={fluid} />
       <ArticleContentWrapper>
-        <ArticleTag
-          to={`blog/category/${tag}`}
-          title={`Kategoria: ${tag}`}
-          large={isLarge}
-        >
-          {tag}
-        </ArticleTag>
+        {tags.map(({ tagName }) => {
+          const slugTag = tagName.toLowerCase();
+          return (
+            <ArticleTag
+              key={tagName}
+              to={`blog/category/${slugTag}`}
+              title={`Kategoria: ${slugTag}`}
+              large={isLarge}
+            >
+              {tagName}
+            </ArticleTag>
+          );
+        })}
+
         <ArticleTitle large={isLarge} to={`blog/${slug}`}>
           {title}
         </ArticleTitle>
@@ -91,15 +98,15 @@ const Article = ({ large, data }) => {
         </ArticleAuthor>
       </ArticleContentWrapper>
     </ArticleWrapper>
-  )
-}
+  );
+};
 
 Article.propTypes = {
   large: PropTypes.bool,
-}
+};
 
 Article.defaultProps = {
   large: false,
-}
+};
 
-export default Article
+export default Article;

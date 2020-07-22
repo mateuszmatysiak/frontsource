@@ -41,6 +41,9 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_tracedSVG
             }
           }
+          tags {
+            tagName
+          }
         }
       }
     }

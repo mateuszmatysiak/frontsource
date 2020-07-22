@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
-import BackIcon from "../../../assets/images/back.svg"
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import BackIcon from '../../../assets/images/back.svg';
 
 const PostTagWrapper = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const PostTagWrapper = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
-`
+`;
 
 const Tag = styled(Link)`
   background-color: ${({ theme }) => theme.font.primary};
@@ -19,12 +19,12 @@ const Tag = styled(Link)`
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 600;
-`
+`;
 const StyledBackIcon = styled.img`
   width: 20px;
   height: 20px;
   margin-right: 20px;
-`
+`;
 
 const PostTag = ({ children, backTo, tagTo }) => {
   return (
@@ -34,7 +34,7 @@ const PostTag = ({ children, backTo, tagTo }) => {
       </Link>
       <Tag to={tagTo}>{children}</Tag>
     </PostTagWrapper>
-  )
-}
+  );
+};
 
-export default PostTag
+export default PostTag;

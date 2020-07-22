@@ -14,13 +14,23 @@ const PostLayout = ({ data: { datoCmsArticle } }) => {
     image: { fluid },
     meta: { firstPublishedAt },
     articleContent,
+    tags,
   } = datoCmsArticle;
 
   return (
     <Post>
-      <PostTag backTo="/blog" tagTo={`blog/category/${0}`}>
-        {0}
-      </PostTag>
+      {tags.map(({ tagName }) => {
+        const slugTag = tagName.toLowerCase();
+        return (
+          <PostTag
+            key={tagName}
+            backTo="/blog"
+            tagTo={`blog/category/${slugTag}`}
+          >
+            {tagName}
+          </PostTag>
+        );
+      })}
       <PostImage fluid={fluid} />
       <PostTitle>{title}</PostTitle>
       <PostAuthor title="Autor" large>
@@ -44,6 +54,9 @@ export const query = graphql`
       }
       meta {
         firstPublishedAt(formatString: "DD-MM-YYYY")
+      }
+      tags {
+        tagName
       }
       articleContent {
         ... on DatoCmsParagraph {
