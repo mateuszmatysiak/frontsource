@@ -1,7 +1,7 @@
 require("dotenv").config()
 
 module.exports = {
-  pathPrefix: "/Frontsource",
+  pathPrefix: "/frontsource",
   siteMetadata: {
     title: `Frontsource`,
     description: `Blog`,
@@ -38,14 +38,15 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        icon: `src/assets/images/favicon.png`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
