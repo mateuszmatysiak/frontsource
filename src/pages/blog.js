@@ -15,8 +15,8 @@ const BlogPage = ({ data }) => {
     <>
       <Newsletter />
       <ArticlesWrapper numberOfArticles={edges.length}>
-        {edges.map(({ node }) => (
-          <Article key={node.id} data={formatData(node)[0]} />
+        {edges.map(({ node }, index) => (
+          <Article large={index === 0} key={node.id} data={formatData(node)[0]} />
         ))}
         <ArticlesButton />
       </ArticlesWrapper>
