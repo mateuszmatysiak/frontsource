@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { down } from 'styled-breakpoints';
-import { mainNavigation } from '../../utils/navigation';
-import { frontsourceTest } from '../../utils/dummyData';
 import { Link } from 'gatsby';
+
+const slugify = require('slugify');
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -16,13 +16,10 @@ const StyledContainer = styled.div`
   width: 1280px;
   margin: 0 auto;
   color: white;
+  overflow: hidden;
 `;
 const StyledCategoryWrapper = styled.div`
   display: flex;
-
-  ${down('sm')} {
-    flex-direction: column;
-  }
 `;
 
 const StyledCategory = styled.div`
@@ -32,13 +29,27 @@ const StyledCategory = styled.div`
   margin: 80px 20px;
 
   ${down('sm')} {
-    margin: 20px 20px 0 20px;
+    margin: 40px 20px 0 20px;
+
+    &:nth-child(1) {
+      flex: unset;
+    }
+
+    &:nth-child(2) {
+      width: 90px;
+      min-width: 160px;
+    }
+
+    &:nth-child(3) {
+      display: none;
+    }
   }
 `;
 const StyledTitle = styled.h3`
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 40px;
+  white-space: nowrap;
 `;
 
 const StyledList = styled.ul`
@@ -49,9 +60,19 @@ const StyledList = styled.ul`
 const StyledListItem = styled.li`
   font-size: 13px;
   margin-bottom: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 const StyledListItemLink = styled(Link)`
+  color: ${({ theme }) => theme.font.tertiary};
+  &:hover {
+    color: ${({ theme }) => theme.font.white};
+  }
+`;
+
+const StyledListItemLinkOut = styled.a`
   color: ${({ theme }) => theme.font.tertiary};
   &:hover {
     color: ${({ theme }) => theme.font.white};
@@ -71,7 +92,7 @@ const StyledRightReserved = styled.div`
   text-align: center;
 `;
 
-const Footer = () => {
+const Footer = ({ edges }) => {
   return (
     <StyledFooter>
       <StyledContainer>
@@ -79,28 +100,43 @@ const Footer = () => {
           <StyledCategory>
             <StyledTitle>Kategorie</StyledTitle>
             <StyledList>
-              {mainNavigation.map(({ name, to }) => (
-                <StyledListItem key={name}>
-                  <StyledListItemLink to={to}>{name}</StyledListItemLink>
-                </StyledListItem>
-              ))}
+              <StyledListItem>
+                <StyledListItemLink to="/blog">Blog</StyledListItemLink>
+              </StyledListItem>
+              <StyledListItem>
+                <StyledListItemLinkOut
+                  href="https://matysiakmateusz.pl"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  O mnie
+                </StyledListItemLinkOut>
+              </StyledListItem>
+              <StyledListItem>
+                <StyledListItemLink to="/contact">Kontakt</StyledListItemLink>
+              </StyledListItem>
             </StyledList>
           </StyledCategory>
           <StyledCategory>
             <StyledTitle>Ostatnie artykuły</StyledTitle>
             <StyledList>
-              {frontsourceTest.map(({ name, to }) => (
-                <StyledListItem key={name}>
-                  <StyledListItemLink to={to}>{name}</StyledListItemLink>
-                </StyledListItem>
-              ))}
+              {edges?.slice(0, 6)?.map(({ node }) => {
+                const slug = slugify(node.title, { lower: true });
+                return (
+                  <StyledListItem key={node.id}>
+                    <StyledListItemLink to={`blog/${slug}`}>
+                      {node.title}
+                    </StyledListItemLink>
+                  </StyledListItem>
+                );
+              })}
             </StyledList>
           </StyledCategory>
           <StyledCategory>
             <StyledTitle>O mnie</StyledTitle>
             <StyledAboutMe>Mateusz Matysiak</StyledAboutMe>
-            <StyledAboutMe>testmail@gmail.com</StyledAboutMe>
-            <StyledAboutMe>123 456 789</StyledAboutMe>
+            <StyledAboutMe>mateuszmatysiak96@gmail.com</StyledAboutMe>
+            <StyledAboutMe>662 365 914</StyledAboutMe>
           </StyledCategory>
         </StyledCategoryWrapper>
         <StyledRightReserved>

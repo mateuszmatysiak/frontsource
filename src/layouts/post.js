@@ -1,11 +1,11 @@
-import React from "react"
-import { graphql } from "gatsby"
-import PostImage from "../components/Post/PostImage"
-import PostTag from "../components/Post/PostTag"
-import PostAuthor from "../components/Post/PostAuthor"
-import PostTitle from "../components/Post/PostTitle"
-import Post from "../components/Post"
-import generatePost from "../utils/generatePost"
+import React from 'react';
+import { graphql } from 'gatsby';
+import PostImage from '../components/Post/PostImage';
+import PostTag from '../components/Post/PostTag';
+import PostAuthor from '../components/Post/PostAuthor';
+import PostTitle from '../components/Post/PostTitle';
+import Post from '../components/Post';
+import generatePost from '../utils/generatePost';
 
 const PostLayout = ({ data: { datoCmsArticle } }) => {
   const {
@@ -14,7 +14,7 @@ const PostLayout = ({ data: { datoCmsArticle } }) => {
     image: { fluid },
     meta: { firstPublishedAt },
     articleContent,
-  } = datoCmsArticle
+  } = datoCmsArticle;
 
   return (
     <Post>
@@ -29,8 +29,8 @@ const PostLayout = ({ data: { datoCmsArticle } }) => {
 
       {generatePost(articleContent)}
     </Post>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query querySingleArticle($id: String!) {
@@ -61,7 +61,14 @@ export const query = graphql`
         }
       }
     }
+    allDatoCmsArticle {
+      edges {
+        node {
+          title
+        }
+      }
+    }
   }
-`
+`;
 
-export default PostLayout
+export default PostLayout;

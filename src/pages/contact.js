@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import { down } from "styled-breakpoints"
+import React from 'react';
+import styled from 'styled-components';
+import { down } from 'styled-breakpoints';
 
 const ArticlesWrapper = styled.section`
   display: flex;
@@ -9,7 +9,7 @@ const ArticlesWrapper = styled.section`
   max-width: 1280px;
   margin: 0 auto 30px;
   padding: 20px;
-`
+`;
 
 const StyledTitle = styled.span`
   display: block;
@@ -17,7 +17,7 @@ const StyledTitle = styled.span`
   font-weight: 500;
   font-size: 32px;
   color: ${({ theme }) => theme.font.black};
-`
+`;
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -25,26 +25,26 @@ const StyledWrapper = styled.div`
   justify-content: space-between;
   margin-top: 32px;
 
-  ${down("sm")} {
+  ${down('sm')} {
     flex-direction: column;
   }
-`
+`;
 
 const StyledAboutWrapper = styled.div`
   flex: 1 1;
-`
+`;
 
 const StyledAboutParagraph = styled.p`
   margin-bottom: 20px;
   font-size: 24px;
   color: ${({ theme }) => theme.font.secondary};
-`
+`;
 
 const StyledFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   flex: 1 1;
-`
+`;
 
 const StyledInput = styled.input`
   margin-bottom: 20px;
@@ -53,7 +53,7 @@ const StyledInput = styled.input`
   border: none;
   background-color: ${({ theme }) => theme.background.light.primary};
   border-radius: 4px;
-`
+`;
 
 const ContactPage = () => (
   <ArticlesWrapper>
@@ -74,6 +74,18 @@ const ContactPage = () => (
       </StyledFormWrapper>
     </StyledWrapper>
   </ArticlesWrapper>
-)
+);
 
-export default ContactPage
+export const query = graphql`
+  {
+    allDatoCmsArticle {
+      edges {
+        node {
+          title
+        }
+      }
+    }
+  }
+`;
+
+export default ContactPage;
